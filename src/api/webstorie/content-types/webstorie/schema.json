@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "webstories",
+  "info": {
+    "singularName": "webstorie",
+    "pluralName": "webstories",
+    "displayName": "Webstories",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "webstories": {
+      "displayName": "Web Story",
+      "type": "component",
+      "repeatable": true,
+      "component": "webstory.web-story"
+    },
+    "permalink": {
+      "type": "uid",
+      "targetField": "title",
+      "required": false
+    },
+    "webstories_seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

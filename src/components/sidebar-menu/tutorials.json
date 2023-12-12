@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_sidebar_menu_tutorials",
+  "info": {
+    "displayName": "Tutorials",
+    "icon": "layer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "tutorials": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tutorial.tutorial"
+    }
+  }
+}

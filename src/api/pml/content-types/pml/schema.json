@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pmls",
+  "info": {
+    "singularName": "pml",
+    "pluralName": "pmls",
+    "displayName": "Menu List (Primary)",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "permalink": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "device": {
+      "type": "enumeration",
+      "enum": [
+        "Desktop",
+        "Mobile",
+        "Both"
+      ],
+      "required": true,
+      "default": "Both"
+    },
+    "menu": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::menu.menu",
+      "inversedBy": "menu_list_primaries"
+    }
+  }
+}

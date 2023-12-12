@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "smenus",
+  "info": {
+    "singularName": "smenu",
+    "pluralName": "smenus",
+    "displayName": "Secondary Menu",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "menu_list_secondaries": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sml.sml",
+      "mappedBy": "secondary_menu"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

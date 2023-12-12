@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "smls",
+  "info": {
+    "singularName": "sml",
+    "pluralName": "smls",
+    "displayName": "Menu List (Secondary)",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "permalink": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "device": {
+      "type": "enumeration",
+      "enum": [
+        "Desktop",
+        "Mobile",
+        "Both"
+      ],
+      "required": true,
+      "default": "Both"
+    },
+    "secondary_menu": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::smenu.smenu",
+      "inversedBy": "menu_list_secondaries"
+    },
+    "tutorials": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tutorial.tutorial",
+      "mappedBy": "menu_list_secondary"
+    },
+    "default_page": {
+      "type": "string"
+    }
+  }
+}

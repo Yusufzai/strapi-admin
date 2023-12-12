@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tsms",
+  "info": {
+    "singularName": "tsm",
+    "pluralName": "tsms",
+    "displayName": "Tutorials - Sidebar Menu "
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "permalink": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "sidebar_menu": {
+      "displayName": "Tutorials",
+      "type": "component",
+      "repeatable": true,
+      "component": "sidebar-menu.tutorials"
+    }
+  }
+}

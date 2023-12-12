@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tutorials",
+  "info": {
+    "singularName": "tutorial",
+    "pluralName": "tutorials",
+    "displayName": "Tutorials",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "permalink": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "featured_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "submenu": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "tutorials": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tutorial.tutorial",
+      "mappedBy": "tutorial"
+    },
+    "tutorial": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tutorial.tutorial",
+      "inversedBy": "tutorials"
+    },
+    "menu_list_secondary": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sml.sml",
+      "inversedBy": "tutorials"
+    }
+  }
+}
